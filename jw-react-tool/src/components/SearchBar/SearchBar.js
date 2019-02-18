@@ -1,9 +1,19 @@
 import React from 'react';
+import './SearchBar.css';
 
 const SearchBar = props => {
     return (
-        <div>
-
+        <div className="searchB">
+            <div className="instaParts">
+                <img className="instaCam" src="/Images/InstagramCam.png" alt="Insta-Cam" />
+                <img className="instaText" src="/Images/InstagramText.png" alt="Instagram" />
+            </div>
+            <input className="searchField" type="text" placeholder='Search' />
+            <div className="icons">
+                <i className="far fa-compass"></i>
+                <i className="far fa-heart"></i>
+                <i className="far fa-user"></i>
+            </div>
         </div>
     )
 }
