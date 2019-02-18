@@ -1,14 +1,15 @@
 import React from 'react';
-
+import './CommentSection.css';
 const CommentSection = props => {
     return (
         <div className="cSection">
             {props.comments.map(e=> (
-                <div>
-                    <p>{e.username} {e.text}</p>
+                <div className="textBlock">
+                    <p className="textName">{e.username}</p> 
+                    <p className="textContent">{e.text}</p>
                 </div>
             ))}
-            <input type="text" placeholder="Add a comment ..." />
+            <input className="commentBox" type="text" placeholder="Add a comment ..." />
         </div>
     )
 }
