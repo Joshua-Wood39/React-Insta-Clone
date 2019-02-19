@@ -109,11 +109,6 @@ table {
     background: white;
 }
 
-.timeS {
-    align-self: center;
-    margin: 0 10px;
-}
-
 .likes {
     position: relative;
     left: -278px;

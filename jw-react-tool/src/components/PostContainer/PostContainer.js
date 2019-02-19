@@ -18,7 +18,6 @@ const PostContainer = props => {
                     <div className="elBetween">
                         <button className="likeB"><i className="far fa-heart"></i></button>
                         <button className="commentB"><i class="far fa-comment"></i></button>
-                        <h4 className="timeS">** timeStamp **</h4>
                     </div>
                     <h5 className="likes">{data.likes} likes</h5>
                     <CommentSection 

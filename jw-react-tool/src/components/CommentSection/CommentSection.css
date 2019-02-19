@@ -60,6 +60,11 @@ table {
     margin-left: 10px;
 }
 
+.timeS {
+	position: relative;
+	left: -260px;
+}
+
 .commentBox {
     position: relative;
     left: -207px;
