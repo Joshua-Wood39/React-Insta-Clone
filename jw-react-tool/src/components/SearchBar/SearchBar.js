@@ -8,7 +8,15 @@ const SearchBar = props => {
                 <img className="instaCam" src="/Images/InstagramCam.png" alt="Insta-Cam" />
                 <img className="instaText" src="/Images/InstagramText.png" alt="Instagram" />
             </div>
-            <input className="searchField" type="text" placeholder='Search' />
+            <form onSubmit={props.findPost}>
+                <input 
+                    className="searchField" 
+                    type="text" 
+                    placeholder='Search'
+                    value={props.value}
+                    name="search"
+                />
+            </form>
             <div className="icons">
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>
