@@ -2,18 +2,21 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
-import dummyData from '../dummy-data';
 
 class PostContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            likes: dummyData.map(e => e.likes),
+            likeCount: 0,
         }
     }
 
-    handleLike = (e) => {
-        console.log(e);
+    handleLike = () => {
+        this.setState((prevState, props) =>{
+            return {
+                likeCount: prevState.likeCount + 1
+            }
+        })
     }
 
     mouseEHandle = (e) => {
@@ -21,11 +24,11 @@ class PostContainer extends React.Component {
     }
 
     render() {
-        console.log(this.state.likes)
+        
         return (
             <div className="pContainer">
                 {this.props.dataArray.map(data => (
-                    <div>
+                    <div key={data.timestamp}>
                         <div className="header">
                             <div className="thumbCont"><img className="thumb" src={data.thumbnailUrl} alt={data.username} /></div>
                             <div className="headerName">{data.username}</div>
@@ -42,7 +45,7 @@ class PostContainer extends React.Component {
                                 </button>
                             <button className="commentB"><i className="far fa-comment"></i></button>
                         </div>
-                        <h5 className="likes">{data.likes} likes</h5>
+                        <h5 className="likes">{(index) => data[index].likes} likes</h5>
                         <CommentSection 
                             object = {data}
                         />

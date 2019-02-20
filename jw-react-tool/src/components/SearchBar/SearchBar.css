@@ -63,6 +63,7 @@ table {
 
 .instaCam {
 	max-width: 45px;
+	margin-left: 10px;
 	
 }
 
@@ -76,11 +77,13 @@ table {
 	height: 25px;
 	font-size: 1.1rem;
 	align-self: center;
+	margin-top: 10px;
 }
 
 .icons {
 	display: flex;
 	align-items: center;
+	margin-right: 10px;
 	
 }
 
