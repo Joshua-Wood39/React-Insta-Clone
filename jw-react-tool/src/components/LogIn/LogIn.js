@@ -1,4 +1,5 @@
 import React from 'react';
+import './LogIn.css';
 
 
 
@@ -24,11 +25,27 @@ logInHandler = e => {
 
     render() {
         return (
-            <div className="logIn">
+            <div>
                 <form onSubmit={this.logInHandler}>
-                    <input className="username" type="text" value={this.state.userText} onChange={this.changeHandler} name="userText"/>
-                    <input className="password" type="text" value={this.state.passText} onChange={this.changeHandler} name="passText"/> 
+                <div className="logIn">
+                    <input 
+                        className="username" 
+                        type="text" 
+                        value={this.state.userText} 
+                        onChange={this.changeHandler} 
+                        name="userText"
+                        placeholder="--Name--"
+                    />
+                    <input 
+                        className="password" 
+                        type="text" 
+                        value={this.state.passText} 
+                        onChange={this.changeHandler} 
+                        name="passText"
+                        placeholder="--Password--"
+                    /> 
                     <button className="logButt">Log In</button>
+                </div>
                 </form>
             </div>
         )

@@ -8,36 +8,47 @@ class PostsPage extends React.Component {
     constructor () {
         super();
         this.state = {
-          dummy: [],
-          filtered: [],
+            dummy: [],
+            filtered: [],
+            search:''
         }
-      }
+    }
     
     componentDidMount() {
-      this.setState({ dummy: dummyData, filtered: dummyData})
+        this.setState({ dummy: dummyData, filtered: dummyData})
+    }
+    
+    changeHandler = e => {
+        this.setState({ search: e.target.value});
     }
     
     handleSearch = e => {
-      let currentList = [];
-      let newList = [];
+        this.setState({ search: e.target.value});
     
-      
-          currentList = this.state.dummy;
-          newList = currentList.filter(item => {
-              const lc = item.username.toLowerCase();
-              const filter = e.target.value.toLowerCase();
-              return lc.includes(filter);
-          });
-    
-      this.setState({
-          filtered: newList,
-      });
+
+        let coreDummy = this.state.dummy;
+        let filteredDummy = this.state.filtered.filter(
+            (contact) => {
+                return contact.username.indexOf(this.state.search) !== -1;
+            }
+        
+        )
+        if (this.state.search !== "") {
+            this.setState({dummy: filteredDummy})
+        } else {
+            this.setState({dummy: coreDummy})
+        }
+
     }
 
     render() {
+        console.log(this.state.search);
         return (
             <div>
-                <SearchBar findPost = {this.handleSearch} />
+                <SearchBar 
+                    findPost = {this.handleSearch} 
+                    changeHandler = {this.changeHandler}
+                />
                 <PostContainer dataArray = {this.state.dummy} />
             </div>
         )

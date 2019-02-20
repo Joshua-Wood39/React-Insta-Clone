@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.logIn {
+    margin: 50px auto;
+    width: 300px;
+    height: 300px;
+    outline: thick double rgb(100, 0, 0);
+    display: flex;
+    flex-direction: column;
+    background: rgb(36, 36, 36);
+}
+
+.username {
+    width: 200px;
+    align-self: center;
+    text-align: center;
+    border: 3px double rgb(31, 31, 31);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin: 15px;
+}
+
+.password {
+    width: 200px;
+    align-self: center;
+    text-align: center;
+    border: 3px double rgb(31, 31, 31);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin: 15px;
+}
+
+.logButt {
+    margin-top: 15px;
+    border: 3px double black;
+    border-radius: 60%;
+    width: 180px;
+    height: 150px;
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 800;
+    background: rgb(85, 11, 11);
+    color: goldenrod;
+    cursor: pointer;
+}
+
+.logButt:hover {
+    background: goldenrod;
+    color: rgb(85, 11, 11);
+}

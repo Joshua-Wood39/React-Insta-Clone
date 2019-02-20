@@ -45,7 +45,7 @@ class PostContainer extends React.Component {
                                 </button>
                             <button className="commentB"><i className="far fa-comment"></i></button>
                         </div>
-                        <h5 className="likes">{(index) => data[index].likes} likes</h5>
+                        <h5 className="likes">{this.state.likeCount} likes</h5>
                         <CommentSection 
                             object = {data}
                         />

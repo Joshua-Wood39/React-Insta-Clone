@@ -15,6 +15,7 @@ const SearchBar = props => {
                     placeholder='Search'
                     value={props.value}
                     name="search"
+                    onChange={props.findPost}
                 />
             </form>
             <div className="icons">
