@@ -19,7 +19,7 @@ changeHandler = e => {
 
 logInHandler = e => {
     e.preventDefault();
-    localStorage.setItem('username', this.state.userText);
+    localStorage.setItem('userName', this.state.userText);
     window.location.reload();
 }
 
@@ -28,6 +28,7 @@ logInHandler = e => {
             <div>
                 <form onSubmit={this.logInHandler}>
                 <div className="logIn">
+                    <h4 className="headerJoke">I Do Not Believe In Social Media</h4>
                     <input 
                         className="username" 
                         type="text" 

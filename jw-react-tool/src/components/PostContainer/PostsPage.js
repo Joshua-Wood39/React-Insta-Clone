@@ -26,7 +26,7 @@ class PostsPage extends React.Component {
         this.setState({ search: e.target.value});
     
 
-        let coreDummy = this.state.dummy;
+        let coreDummy = this.state.filtered;
         let filteredDummy = this.state.filtered.filter(
             (contact) => {
                 return contact.username.indexOf(this.state.search) !== -1;

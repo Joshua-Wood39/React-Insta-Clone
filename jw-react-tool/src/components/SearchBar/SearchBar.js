@@ -1,9 +1,20 @@
 import React from 'react';
 import './SearchBar.css';
+import styled from 'styled-components';
+
+
+const Header = styled.header`
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: space-between;
+    width: 660px;
+    height: 50px;
+`;
+
 
 const SearchBar = props => {
     return (
-        <div className="searchB">
+        <Header>
             <div className="instaParts">
                 <img className="instaCam" src="/Images/InstagramCam.png" alt="Insta-Cam" />
                 <img className="instaText" src="/Images/InstagramText.png" alt="Instagram" />
@@ -23,7 +34,7 @@ const SearchBar = props => {
                 <i className="far fa-heart"></i>
                 <i className="far fa-user"></i>
             </div>
-        </div>
+        </Header>
     )
 }
 

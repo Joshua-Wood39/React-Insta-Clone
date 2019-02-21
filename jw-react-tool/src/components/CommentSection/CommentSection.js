@@ -17,7 +17,7 @@ class CommentSection extends React.Component {
 
     addNewComment = (e) => {
         e.preventDefault();
-        this.setState({comments: [...this.state.comments, {username: localStorage.getItem('username') ,text: this.state.newComment}], newComment: ''});
+        this.setState({comments: [...this.state.comments, {username: localStorage.getItem('userName') ,text: this.state.newComment}], newComment: ''});
     }
 
     render(){
