@@ -2,56 +2,82 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const PContainer = styled.div`
+    max-width: 660px;
+    margin: auto;
+`;
+
+const Identifiers = styled.div`
+    display: flex;
+`;
+
+const ThumbContainter = styled.div`
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+`;
+
+const Thumb = styled.img`
+    max-width: 80px;
+    max-height: 80px;
+`;
+
+const IndentName = styled.div`
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: center;
+`;
+
+const ImgCont = styled.div`
+    width: 640px;
+    margin: auto;
+`;
+
+const BigImg = styled.img`
+    max-width: 640px;
+`;
+
+
 
 class PostContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            likeCount: 0,
+            
         }
     }
 
-    handleLike = () => {
-        this.setState((prevState, props) =>{
-            return {
-                likeCount: prevState.likeCount + 1
-            }
-        })
-    }
 
-    mouseEHandle = (e) => {
-        e.target.style.cursor= "pointer";
-    }
+    
+
+    
 
     render() {
-        
+        console.log(this.state.likeCount);
         return (
-            <div className="pContainer">
-                {this.props.dataArray.map(data => (
+            <PContainer>
+                {this.props.dataArray.map((data, index) => 
                     <div key={data.timestamp}>
-                        <div className="header">
-                            <div className="thumbCont"><img className="thumb" src={data.thumbnailUrl} alt={data.username} /></div>
-                            <div className="headerName">{data.username}</div>
-                        </div>
-                        <div className="imgBigCont">
-                            <img className="imgBig" src={data.imageUrl} alt={data.username} />
-                        </div>
-                        <div className="elBetween">
-                            <button 
-                                onMouseOver={this.mouseEHandle}
-                                className="likeB" 
-                                onClick={this.handleLike}>
-                                    <i className="far fa-heart"></i>
-                                </button>
-                            <button className="commentB"><i className="far fa-comment"></i></button>
-                        </div>
-                        <h5 className="likes">{this.state.likeCount} likes</h5>
-                        <CommentSection 
-                            object = {data}
-                        />
-                    </div>
-                ))}
-            </div>
+                    <Identifiers>
+                        <ThumbContainter><Thumb src={data.thumbnailUrl} alt={data.username} /></ThumbContainter>
+                        <IndentName>{data.username}</IndentName>
+                    </Identifiers>
+                    <ImgCont>
+                        <BigImg src={data.imageUrl} alt={data.username} />
+                    </ImgCont>
+                    
+                    <CommentSection 
+                        object = {data}
+                        
+                    />
+                </div>
+                    )}
+                
+            </PContainer>
         )
     }
 }

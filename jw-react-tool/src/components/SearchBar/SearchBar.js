@@ -11,17 +11,42 @@ const Header = styled.header`
     height: 50px;
 `;
 
+const InstaParts = styled.div`
+    display: flex;
+`;
+
+const InstaCam = styled.img`
+    max-width: 45px;
+    margin-left: 10px;
+`
+
+const InstaText = styled.img`
+    max-width: 150px;
+    margin-left: 25px;
+`;
+
+const SearchField = styled.input`
+    height: 25px;
+    font-size: 1.1rem;
+    align-self: center;
+    margin-top: 10px;
+`;
+
+const Icons = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+`;
 
 const SearchBar = props => {
     return (
         <Header>
-            <div className="instaParts">
-                <img className="instaCam" src="/Images/InstagramCam.png" alt="Insta-Cam" />
-                <img className="instaText" src="/Images/InstagramText.png" alt="Instagram" />
-            </div>
-            <form onSubmit={props.findPost}>
-                <input 
-                    className="searchField" 
+            <InstaParts>
+                <InstaCam src="/Images/InstagramCam.png" alt="Instagram Logo" />
+                <InstaText src="/Images/InstagramText.png" alt="Instagram" />
+            </InstaParts>
+            <form>
+                <SearchField
                     type="text" 
                     placeholder='Search'
                     value={props.value}
@@ -29,11 +54,11 @@ const SearchBar = props => {
                     onChange={props.findPost}
                 />
             </form>
-            <div className="icons">
+            <Icons>
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>
                 <i className="far fa-user"></i>
-            </div>
+            </Icons>
         </Header>
     )
 }
