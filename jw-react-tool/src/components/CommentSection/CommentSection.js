@@ -3,9 +3,31 @@ import './CommentSection.css';
 import moment from 'moment';
 import styled from 'styled-components';
 
+const CSection = styled.div`
+`;
+
+const TextBlock = styled.div`
+    display: flex;
+    margin: 10px;
+`;
+
+const TextName = styled.p`
+    font-weight: bold;
+`;
+
+const TextContent = styled.p`
+    margin-left: 10px;
+`;
+
+const CommentBox = styled.input`
+    position: relative;
+    left: -207px;
+    margin: 35px 0 25px 0;
+    font-size: 1.1rem;
+`;
+
 const LikeCont = styled.div`
     display: flex;
-    border: 2px solid red;
 `;
 
 const LikeClicker = styled.div`
@@ -56,7 +78,7 @@ class CommentSection extends React.Component {
     render(){
         console.log(this.state.likeCount);
         return (
-            <div className="cSection">
+            <CSection>
                 <LikeCont>
                     <LikeClicker 
                         onMouseOver={this.mouseEHandle}
@@ -67,22 +89,21 @@ class CommentSection extends React.Component {
                     <Bubble><i className="far fa-comment"></i></Bubble>
                 </LikeCont>
                 {this.state.comments.map(e => (
-                    <div className="textBlock">
-                        <p className="textName">{e.username}</p> 
-                        <p className="textContent">{e.text}</p>
-                    </div>
+                    <TextBlock>
+                        <TextName>{e.username}</TextName> 
+                        <TextContent>{e.text}</TextContent>
+                    </TextBlock>
                 ))}
                 <h4 className="timeS">{moment().startOf('hour').fromNow()} </h4>
                 <form onSubmit={this.addNewComment}>
-                    <input 
-                        className="commentBox" 
+                    <CommentBox  
                         type="text" 
                         placeholder="Add a comment ..."
                         value={this.state.newComment}
                         onChange={this.handleChanges}
                     />
                 </form>
-            </div>
+            </CSection>
         )
     }
 }

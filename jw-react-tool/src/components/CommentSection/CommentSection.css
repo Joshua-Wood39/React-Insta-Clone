@@ -47,27 +47,10 @@ table {
 	border-spacing: 0;
 }
 
-.textBlock {
-    display: flex;
-    margin: 10px;
-}
 
-.textName {
-    font-weight: bold;
-}
 
-.textContent {
-    margin-left: 10px;
-}
 
 .timeS {
 	position: relative;
 	left: -260px;
-}
-
-.commentBox {
-    position: relative;
-    left: -207px;
-    margin: 35px 0 25px 0;
-    font-size: 1.1rem;
 }
